@@ -53,7 +53,7 @@ namespace OrderManagementSystem.Controllers
             return Ok(convertOrder);
         }
 
-        [Authorize("Admin")] 
+        [Authorize(Roles = "Admin")]
         [HttpGet("")]
         public async Task< ActionResult<IEnumerable<GetAllOrders>>> GetAllOrders()
         {
@@ -66,7 +66,7 @@ namespace OrderManagementSystem.Controllers
             return Ok(convertOrder);
         }
 
-        [Authorize("Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPut("{orderId}/status")]
         public async Task<IActionResult> UpdateStatusOrder([FromRoute] int orderId, [FromBody] Status status)
         {

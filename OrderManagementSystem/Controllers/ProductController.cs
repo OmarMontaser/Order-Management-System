@@ -54,7 +54,7 @@ namespace OrderManagementSystem.Controllers
             return Ok(convertProduct);
         }
 
-        [Authorize("Admin")]
+        [Authorize(Roles ="Admin")]
         [HttpPost]
         public async Task<IActionResult> CreateProduct([FromBody] CreateProduct product)
         {
@@ -69,7 +69,7 @@ namespace OrderManagementSystem.Controllers
             return Ok(newProduct);
         }
 
-        [Authorize("Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPut("ProductId")]
         public async Task<IActionResult> UpdateProduct([FromBody] UpdateProduct upProduct, [FromRoute] int ProductId)
         {
