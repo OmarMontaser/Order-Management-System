@@ -8,7 +8,7 @@ using System.Collections;
 namespace OrderManagementSystem.Controllers
 {
 
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     [ApiController]
     [Route("api/[Controller]")]
     public class InvoiceController : ControllerBase
