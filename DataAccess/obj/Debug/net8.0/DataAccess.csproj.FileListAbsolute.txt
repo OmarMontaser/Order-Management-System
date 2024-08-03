@@ -12,3 +12,4 @@ C:\Users\omarm\OneDrive\Desktop\OrderManagementSystem\DataAccess\obj\Debug\net8.
 C:\Users\omarm\OneDrive\Desktop\OrderManagementSystem\DataAccess\obj\Debug\net8.0\DataAccess.pdb
 C:\Users\omarm\OneDrive\Desktop\OrderManagementSystem\DataAccess\obj\Debug\net8.0\DataAccess.genruntimeconfig.cache
 C:\Users\omarm\OneDrive\Desktop\OrderManagementSystem\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll
+C:\Users\omarm\OneDrive\Desktop\OrderManagementSystem\DataAccess\obj\Debug\net8.0\DataAccess.sourcelink.json

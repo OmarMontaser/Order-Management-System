@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using DataAccess.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Repositories;
 using Services;
@@ -52,6 +53,7 @@ namespace OrderManagementSystem.Controllers
 
         }
 
+        [Authorize(Roles ="Admin")]
         [HttpPost("addrole")]
         public async Task<IActionResult> AddRoleAsync([FromBody] AddRole model)
         {

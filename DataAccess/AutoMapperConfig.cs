@@ -14,6 +14,7 @@ namespace DataAccess
         public AutoMapperConfig()
         {
             CreateMap<CreateCustomer, Customer>().ReverseMap();
+
             CreateMap<GetOrderbyCustomer, Customer>().ReverseMap();
 
             CreateMap<CreateOrder, Order>().ReverseMap();
@@ -25,13 +26,12 @@ namespace DataAccess
             CreateMap<GetProduct, Product>().ReverseMap();
             CreateMap<CreateProduct, Product>().ReverseMap();
             CreateMap<UpdateProduct, Product>().ReverseMap();
+            CreateMap<GetProduct,GetProductDto>().ReverseMap();
 
             CreateMap<GetInvoiceData,  Invoice>().ReverseMap();
+            CreateMap<InvoiceDto, Invoice>().ReverseMap();
 
-
-
+            CreateMap<OrderItemDTO, OrderItem>().ReverseMap();
         }
-
     }
-
 }

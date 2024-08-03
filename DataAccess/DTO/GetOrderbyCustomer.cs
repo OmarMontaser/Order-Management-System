@@ -9,7 +9,6 @@ namespace DataAccess.DTO
 {
     public class GetOrderbyCustomer
     {
-        public ICollection<Order> Orders { get; set; }
-
+        public ICollection<CreateOrder> Orders { get; set; }
     }
 }

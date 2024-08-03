@@ -17,3 +17,4 @@ C:\Users\omarm\OneDrive\Desktop\OrderManagementSystem\Services\bin\Debug\net8.0\
 C:\Users\omarm\OneDrive\Desktop\OrderManagementSystem\Services\obj\Debug\net8.0\Services.csproj.Up2Date
 C:\Users\omarm\OneDrive\Desktop\OrderManagementSystem\Services\bin\Debug\net8.0\Repositories.dll
 C:\Users\omarm\OneDrive\Desktop\OrderManagementSystem\Services\bin\Debug\net8.0\Repositories.pdb
+C:\Users\omarm\OneDrive\Desktop\OrderManagementSystem\Services\obj\Debug\net8.0\Services.sourcelink.json

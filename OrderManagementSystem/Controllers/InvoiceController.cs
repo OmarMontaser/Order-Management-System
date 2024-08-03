@@ -8,7 +8,7 @@ using System.Collections;
 namespace OrderManagementSystem.Controllers
 {
 
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     [ApiController]
     [Route("api/[Controller]")]
     public class InvoiceController : ControllerBase
@@ -23,14 +23,14 @@ namespace OrderManagementSystem.Controllers
         }
 
         [HttpGet("{invoiceId}")]
-        public async Task<IActionResult> GetInvoicDetails([FromRoute] int invoicId)
+        public async Task<IActionResult> GetInvoicDetails([FromRoute] int invoiceId)
         {
-            var invoice = await _unitOfWork.Invoices.GetByIdAsync(invoicId);
-            if (invoice == null)
+            var invoice = await _unitOfWork.Invoices.FindAsync(i => i.InvoiceId == invoiceId);
+            if (invoice is null)
             {
                 return NotFound("No Invoice Found");
             }
-            var convertInvoice = _mapper.Map<GetInvoiceData>(invoice);
+            var convertInvoice =  _mapper.Map<GetInvoiceData>(invoice);
             return Ok(convertInvoice);
         }
 
@@ -45,8 +45,5 @@ namespace OrderManagementSystem.Controllers
             var convertInvoice = _mapper.Map<IEnumerable<GetInvoiceData>>(invoice);
             return Ok(convertInvoice);
         }
-
-
-
     }
 }

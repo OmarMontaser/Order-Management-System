@@ -25,18 +25,16 @@ namespace OrderManagementSystem.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateOrder([FromBody] Order order)
+        public async Task<IActionResult> CreateOrder([FromBody] CreateOrder orderDto)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var newOrder = await _orderService.CreateOrderAsync(order);
-
-            //await _unitOfWork.Orders.AddAsync(newOrder);
-            //await _unitOfWork.complete();
-
-            return Ok(newOrder);
+            var orderMap = _mapper.Map<Order>(orderDto);
+            var order = await _orderService.CreateOrderAsync(orderMap);
+            var orderDtoMap = _mapper.Map<CreateOrder>(order);
+            return Ok(orderDtoMap);
         }
 
 
@@ -53,7 +51,7 @@ namespace OrderManagementSystem.Controllers
             return Ok(convertOrder);
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet("")]
         public async Task< ActionResult<IEnumerable<GetAllOrders>>> GetAllOrders()
         {
@@ -66,11 +64,11 @@ namespace OrderManagementSystem.Controllers
             return Ok(convertOrder);
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpPut("{orderId}/status")]
         public async Task<IActionResult> UpdateStatusOrder([FromRoute] int orderId, [FromBody] Status status)
         {
-            var order = await _unitOfWork.Orders.GetByIdAsync(orderId);
+            var order = await _unitOfWork.Orders.FindAsync(o => o.OrderId == orderId);
             if (order == null)
             {
                 return NotFound("No order Found");

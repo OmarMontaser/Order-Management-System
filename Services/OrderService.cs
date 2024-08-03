@@ -47,8 +47,8 @@ namespace Services
                 totalAmount *= 0.95M;
             }
             order.TotalAmount = totalAmount;
-            var neworder = _mapper.Map<Order>(order);
-            await _unitofwork.Orders.AddAsync(neworder);
+            
+            await _unitofwork.Orders.AddAsync(order);
             await _unitofwork.complete();
 
             await _invoiceService.GenerateInvoiceAsync(order);

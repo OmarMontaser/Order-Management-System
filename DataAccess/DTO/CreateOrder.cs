@@ -11,17 +11,12 @@ namespace DataAccess.DTO
 {
     public class CreateOrder
     {
-        //public int OrderId { get; set; }
-
-        //[ForeignKey("Customer")]
         public int CustomerId { get; set; }
-        //public Customer Customer { get; set; }
-
         [Precision(18, 2)]
         public decimal TotalAmount { get; set; }
-        public ICollection<OrderItem> OrderItems { get; set; }
         public string PaymentMethod { get; set; }
         public string Status { get; set; }
-        //public Invoice Invoice { get; set; }
+        public ICollection<OrderItemDTO> OrderItems { get; set; }
+        public Invoice Invoice { get; set; }
     }
 }

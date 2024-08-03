@@ -36,14 +36,13 @@ namespace OrderManagementSystem.Controllers
         [HttpGet("/{CustomerId}/Order")]
         public async Task<IActionResult> GetOrdersByCustomer([FromRoute] int CustomerId)
         {
-            var customer = await _unitofwork.Customers.FindAsync(c => c.CustomerId == CustomerId);
-            if (customer == null)
+            var order = await _unitofwork.Orders.FindAllAsync(c => c.CustomerId == CustomerId, new[] { "OrderItems", "Invoice" });
+            if (order == null)
             {
                 return NotFound("No Order Found by this Customer");
             }
-            var convertCustomer = _mapper.Map<GetOrderbyCustomer>(customer);
-            return Ok(convertCustomer);
+            var map = _mapper.Map<IEnumerable<GetOrder>>(order);
+            return Ok(map);
         }
-
     }
 }

@@ -149,3 +149,4 @@ C:\Users\omarm\OneDrive\Desktop\OrderManagementSystem\OrderManagementSystem\obj\
 C:\Users\omarm\OneDrive\Desktop\OrderManagementSystem\OrderManagementSystem\obj\Debug\net8.0\ref\OrderManagementSystem.dll
 C:\Users\omarm\OneDrive\Desktop\OrderManagementSystem\OrderManagementSystem\bin\Debug\net8.0\Services.dll
 C:\Users\omarm\OneDrive\Desktop\OrderManagementSystem\OrderManagementSystem\bin\Debug\net8.0\Services.pdb
+C:\Users\omarm\OneDrive\Desktop\OrderManagementSystem\OrderManagementSystem\obj\Debug\net8.0\OrderManagementSystem.sourcelink.json
