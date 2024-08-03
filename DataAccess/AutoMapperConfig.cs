@@ -22,6 +22,7 @@ namespace DataAccess
             CreateMap<GetAllOrders, Order>().ReverseMap();
             CreateMap<Status, Order>().ReverseMap();
 
+
             CreateMap<GetAllProducts, Product>().ReverseMap();
             CreateMap<GetProduct, Product>().ReverseMap();
             CreateMap<CreateProduct, Product>().ReverseMap();

@@ -17,6 +17,6 @@ namespace DataAccess.DTO
         public string PaymentMethod { get; set; }
         public string Status { get; set; }
         public ICollection<OrderItemDTO> OrderItems { get; set; }
-        public Invoice Invoice { get; set; }
+        //public Invoice Invoice { get; set; }
     }
 }
