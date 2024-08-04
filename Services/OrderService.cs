@@ -30,11 +30,14 @@ namespace Services
         {
             foreach (var item in order.OrderItems) {
 
-                var product = await _unitofwork.Products.GetByIdAsync(item.ProductId);
+                var product = await _unitofwork.Products.FindAsync( i => i.ProductId == item.ProductId);
                 if(product is null || product.Stock < item.Quantity)
                 {
                     throw new Exception("Insufficient stock for product " + product?.Name);
                 }
+                product.Stock-= item.Quantity;
+                _unitofwork.Products.Update(product);
+                await _unitofwork.complete();
             }
 
             var totalAmount = order.OrderItems.Sum(item => item.Quantity * item.UnitPrice);
